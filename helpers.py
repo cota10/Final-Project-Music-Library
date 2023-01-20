@@ -8,7 +8,7 @@ from models import User
 def token_required(our_flask_function):
     @wraps(our_flask_function)
     def decorated(*args, **kwargs):
-        token = '539a15a6dbcbf126021601f68ff893504396f948e999c7af'
+        token = None
 
         if 'x-access-token' in request.headers:
             token = request.headers['x-access-token'].split(' ')[1]
